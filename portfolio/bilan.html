@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+  body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100vw;
+      margin: 0;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .top-banner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px 20px 80px;
+      border-radius: 10px;
+      z-index: 2;
+      width: 55vw;
+      max-width: 800px;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      position: absolute;
+      left: 230px;
+      top: -50px;
+      height: 150px;
+      width: auto;
+      z-index: 3;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <header class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html">Projets</a></li>
+          <li><a href="bilan.html" class="active">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="hero"></section>
+
+  <script>
+    const flagButton = document.querySelector('.flag-button');
+    const dropdown = document.querySelector('.dropdown-flags');
+    const flagImg = flagButton.querySelector('img');
+    const flagOptions = document.querySelectorAll('.flag-option img');
+
+    flagButton.addEventListener('click', () => {
+      dropdown.classList.toggle('show');
+    });
+
+    flagOptions.forEach(flag => {
+      flag.addEventListener('click', () => {
+        const currentSrc = flagImg.src;
+        flagImg.src = flag.src;
+        flag.src = currentSrc;
+        dropdown.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

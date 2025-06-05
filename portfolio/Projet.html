@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Bibou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+      body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100vw;
+      margin: 0;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .top-banner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px 20px 80px;
+      border-radius: 10px;
+      z-index: 2;
+      width: 55vw;
+      max-width: 800px;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      position: absolute;
+      left: 230px;
+      top: -50px;
+      height: 150px;
+      width: auto;
+      z-index: 3;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+    /* Section Projets */
+    .projects {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #121212;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.4em;
+      color: white;
+    }
+
+    .card-content p {
+      font-size: 1em;
+      margin: 0 0 20px;
+      color: white;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-weight: bold;
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      border: 2px solid white;
+      border-radius: 8px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .read-more:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <header class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li> <!-- Active ici -->
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="hero"></section>
+
+  <section class="projects">
+    <div class="projects-grid">
+
+      <!-- Liens vers projets -->
+      <a href="projet1.html" class="project-card">
+        <img src="projet1.png" alt="Projet 1">
+        <div class="card-content">
+          <h3> Reporting à partir de données stockées dans un SGBD relationnel </h3>
+          <p>Description rapide du projet 1.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet2.html" class="project-card">
+        <img src="projet2.png" alt="Projet 2">
+        <div class="card-content">
+          <h3>SAÉ - Écriture et lecture de fichiers de données</h3>
+          <p>Description rapide du projet 2.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet3.html" class="project-card">
+        <img src="projet3.png" alt="Projet 3">
+        <div class="card-content">
+          <h3>SAÉ - Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple</h3>
+          <p>Description rapide du projet 3.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet4.html" class="project-card">
+        <img src="projet4.png" alt="Projet 4">
+        <div class="card-content">
+          <h3>SAÉ - Apprendre en situation la production de données en entreprise</h3>
+          <p>Description rapide du projet 4.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet5.html" class="project-card">
+        <img src="projet5.png" alt="Projet 5">
+        <div class="card-content">
+          <h3>SAÉ - Conception et implémentation d'une base de données</h3>
+          <p>Description rapide du projet 5.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet6.html" class="project-card">
+        <img src="projet6.png" alt="Projet 6">
+        <div class="card-content">
+          <h3>SAÉ - Estimation par échantillonnage</h3>
+          <p>Description rapide du projet 6.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet7.html" class="project-card">
+        <img src="projet7.png" alt="Projet 7">
+        <div class="card-content">
+          <h3>SAÉ - Régression sur des données réelles</h3>
+          <p>Description rapide du projet 7.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet8.html" class="project-card">
+        <img src="projet8.png" alt="Projet 8">
+        <div class="card-content">
+          <h3>SAÉ - Datavisualisation</h3>
+          <p>Description rapide du projet 8.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+      <a href="projet9.html" class="project-card">
+        <img src="projet9.png" alt="Projet 9">
+        <div class="card-content">
+          <h3>SAÉ - Analyse de données, reporting et datavisualisation</h3>
+          <p>Description rapide du projet 9.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <script>
+    const flagButton = document.querySelector('.flag-button');
+    const dropdown = document.querySelector('.dropdown-flags');
+    const flagImg = flagButton.querySelector('img');
+    const flagOptions = document.querySelectorAll('.flag-option img');
+
+    flagButton.addEventListener('click', () => {
+      dropdown.classList.toggle('show');
+    });
+
+    flagOptions.forEach(flag => {
+      flag.addEventListener('click', () => {
+        const currentSrc = flagImg.src;
+        flagImg.src = flag.src;
+        flag.src = currentSrc;
+        dropdown.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
