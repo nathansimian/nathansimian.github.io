@@ -6,7 +6,7 @@
   <title>Bilan</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <style>
-  body {
+    body {
       font-family: 'Roboto Condensed', sans-serif;
       margin: 0;
       padding: 0;
@@ -53,7 +53,7 @@
 
     .logo {
       position: absolute;
-      left: 230px;
+      left: 430px;
       top: -50px;
       height: 150px;
       width: auto;
@@ -86,7 +86,13 @@
       max-width: 1000px;
       margin: 80px auto;
       padding: 20px;
+      text-align: justify;
+      text-transform: none;
+    }
+
+    h2 {
       text-align: center;
+      text-transform: uppercase;
     }
   </style>
 </head>
@@ -109,28 +115,49 @@
 
   <section class="hero"></section>
 
+  <div class="content">
+    <h2>Retour d’expérience – Ma première année en BUT Science des Données</h2>
+    <p>Inscrit en première année de BUT Sciences des Données à Niort, j’ai pris le temps de revenir sur cette première étape universitaire. Cette année m’a permis de découvrir un nouvel environnement académique, d’adopter des méthodes de travail différentes de celles du lycée, et de mieux me connaître à travers les apprentissages, les réussites mais aussi les obstacles rencontrés.</p>
+
+    <h2>Une année de découvertes et d’apprentissage</h2>
+    <p>En début d’année, je n’avais encore jamais réellement pratiqué l’informatique, et mes bases en statistiques étaient limitées. Très rapidement, j’ai été confronté à un univers technique, avec des outils, des langages et des méthodes qui m’étaient totalement nouveaux. Ce fut une phase exigeante, mais extrêmement formatrice.</p>
+    <p>J’ai également été agréablement surpris par la diversité des matières proposées. En plus des enseignements scientifiques, des modules de communication, d’anglais technique et surtout des projets à présenter à l’oral nous ont été proposés. Ces projets m’ont aidé à progresser à l’oral, à prendre confiance en moi et à renforcer mes capacités à travailler en équipe.</p>
+
+    <h2>Une progression personnelle marquante</h2>
+    <p>Sur le plan personnel, cette année a été l’occasion de changer mes habitudes de travail. Les débuts ont été un peu laborieux, mais j’ai progressivement compris que la réussite dans le supérieur nécessite rigueur, autonomie et régularité. Ce déclic, même s’il est arrivé tardivement, m’a permis de retrouver une dynamique de travail plus efficace.</p>
+    <p>J’ai parfois traversé des phases de doute et de frustration, notamment face à certaines notions complexes en programmation ou lorsque plusieurs projets étaient à rendre en même temps. Malgré tout, j’ai su rester organisé et rendre mes travaux dans les délais, ce qui m’a permis de rester sur une trajectoire positive.</p>
+    <p>L’un des progrès les plus marquants pour moi a été ma prise en main des outils informatiques. En début d’année, je n’y connaissais pratiquement rien, et aujourd’hui, je me sens bien plus à l’aise avec différents langages, grâce à une pratique régulière tout au long de l’année.</p>
+
+    <h2>Forces et limites de la formation selon mon expérience</h2>
+    <p>Initialement, c’est l’aspect statistique de la formation qui m’attirait le plus. À l’inverse, j’appréhendais beaucoup l’informatique, que je considérais comme peu intuitive et difficile d’accès. Ces impressions se sont confirmées en début d’année : l’informatique représentait pour moi un véritable défi.</p>
+    <p>Cependant, à mesure que j’ai avancé dans l’année, j’ai découvert des outils plus accessibles et une approche plus concrète, ce qui a changé ma perception. En travaillant régulièrement, j’ai même fini par prendre goût à certains aspects de la programmation.</p>
+    <p>Concernant les mathématiques, j’ai peut-être sous-estimé leur niveau de complexité, pensant à tort qu’elles seraient plus simples que celles du lycée. Cette erreur d’évaluation m’a conduit à certaines difficultés. À l’inverse, j’ai longtemps pensé que je ne serais pas capable de progresser en informatique, alors que c’est finalement dans ce domaine que j’ai le plus évolué. Aujourd’hui, je me sens même plus compétent en informatique qu’en mathématiques, ce qui était impensable pour moi en début d’année.</p>
+  </div>
+
   <script>
     const flagButton = document.querySelector('.flag-button');
     const dropdown = document.querySelector('.dropdown-flags');
-    const flagImg = flagButton.querySelector('img');
+    const flagImg = flagButton?.querySelector('img');
     const flagOptions = document.querySelectorAll('.flag-option img');
 
-    flagButton.addEventListener('click', () => {
-      dropdown.classList.toggle('show');
+    flagButton?.addEventListener('click', () => {
+      dropdown?.classList.toggle('show');
     });
 
     flagOptions.forEach(flag => {
       flag.addEventListener('click', () => {
-        const currentSrc = flagImg.src;
-        flagImg.src = flag.src;
-        flag.src = currentSrc;
-        dropdown.classList.remove('show');
+        if (flagImg) {
+          const currentSrc = flagImg.src;
+          flagImg.src = flag.src;
+          flag.src = currentSrc;
+          dropdown?.classList.remove('show');
+        }
       });
     });
 
     document.addEventListener('click', (e) => {
-      if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
+      if (!flagButton?.contains(e.target) && !dropdown?.contains(e.target)) {
+        dropdown?.classList.remove('show');
       }
     });
   </script>
