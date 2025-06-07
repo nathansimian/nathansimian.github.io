@@ -19,8 +19,7 @@
     .hero {
       position: relative;
       height: 50vh;
-      width: 100vw;
-      margin: 0;
+      width: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
@@ -28,52 +27,56 @@
 
     .header-container {
       position: absolute;
-      top: 15vh;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       z-index: 10;
+      padding-top: 20px;
     }
 
-    .top-banner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px 40px 20px 80px;
-      border-radius: 10px;
-      z-index: 2;
-      width: 55vw;
-      max-width: 800px;
-      justify-content: flex-start;
+    .logo-container {
+      margin-bottom: 20px;
     }
 
     .logo {
-      position: absolute;
-      left: 430px;
-      top: -50px;
-      height: 150px;
+      height: 200px;
       width: auto;
-      z-index: 3;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 60px;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 4px;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover,
@@ -84,7 +87,7 @@
 
     .content {
       max-width: 1000px;
-      margin: 80px auto;
+      margin: 60px auto 40px;
       padding: 20px;
       text-align: justify;
       text-transform: none;
@@ -93,15 +96,54 @@
     h2 {
       text-align: center;
       text-transform: uppercase;
+      margin-top: 40px;
+    }
+
+    p {
+      line-height: 1.6em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
+
+  <div class="hero"></div>
+
   <div class="header-container">
     <div class="logo-container">
       <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
     </div>
-    <header class="top-banner">
+    <div class="top-banner">
       <nav>
         <ul>
           <li><a href="apdm.html">À propos de moi</a></li>
@@ -110,10 +152,8 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
   </div>
-
-  <section class="hero"></section>
 
   <div class="content">
     <h2>Retour d’expérience – Ma première année en BUT Science des Données</h2>
@@ -134,32 +174,5 @@
     <p>Concernant les mathématiques, j’ai peut-être sous-estimé leur niveau de complexité, pensant à tort qu’elles seraient plus simples que celles du lycée. Cette erreur d’évaluation m’a conduit à certaines difficultés. À l’inverse, j’ai longtemps pensé que je ne serais pas capable de progresser en informatique, alors que c’est finalement dans ce domaine que j’ai le plus évolué. Aujourd’hui, je me sens même plus compétent en informatique qu’en mathématiques, ce qui était impensable pour moi en début d’année.</p>
   </div>
 
-  <script>
-    const flagButton = document.querySelector('.flag-button');
-    const dropdown = document.querySelector('.dropdown-flags');
-    const flagImg = flagButton?.querySelector('img');
-    const flagOptions = document.querySelectorAll('.flag-option img');
-
-    flagButton?.addEventListener('click', () => {
-      dropdown?.classList.toggle('show');
-    });
-
-    flagOptions.forEach(flag => {
-      flag.addEventListener('click', () => {
-        if (flagImg) {
-          const currentSrc = flagImg.src;
-          flagImg.src = flag.src;
-          flag.src = currentSrc;
-          dropdown?.classList.remove('show');
-        }
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!flagButton?.contains(e.target) && !dropdown?.contains(e.target)) {
-        dropdown?.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>
