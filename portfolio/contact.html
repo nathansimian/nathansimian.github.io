@@ -163,7 +163,6 @@
       text-transform: uppercase;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .contact-section {
         flex-direction: column;
@@ -225,20 +224,20 @@
         Mon LinkedIn
       </a>
 
-      <form id="contactForm">
+      <form action="https://formspree.io/f/mqaberkq" method="POST">
         <div style="display: flex; gap: 4%;">
-          <input type="text" placeholder="Prénom*" required style="width: 48%;">
-          <input type="text" placeholder="Nom*" required style="width: 48%;">
+          <input type="text" name="Prénom" placeholder="Prénom*" required style="width: 48%;">
+          <input type="text" name="Nom" placeholder="Nom*" required style="width: 48%;">
         </div>
-        <input type="email" placeholder="E-mail*" required>
-        <input type="tel" placeholder="Téléphone">
-        <select required>
+        <input type="email" name="Email" placeholder="E-mail*" required>
+        <input type="tel" name="Téléphone" placeholder="Téléphone">
+        <select name="Objet" required>
           <option value="" disabled selected>Objet de la demande*</option>
-          <option>Demande d'information</option>
-          <option>Collaboration</option>
-          <option>Autre</option>
+          <option value="Demande d'information">Demande d'information</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Autre">Autre</option>
         </select>
-        <textarea placeholder="Message*" required></textarea>
+        <textarea name="Message" placeholder="Message*" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
     </div>
@@ -248,28 +247,5 @@
       <a href="Nathan SIMIAN CV.pdf" download>Télécharger mon CV</a>
     </div>
   </section>
-
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const prenom = this.querySelector('input[placeholder="Prénom*"]').value;
-      const nom = this.querySelector('input[placeholder="Nom*"]').value;
-      const email = this.querySelector('input[placeholder="E-mail*"]').value;
-      const tel = this.querySelector('input[placeholder="Téléphone"]').value;
-      const objet = this.querySelector('select').value;
-      const message = this.querySelector('textarea').value;
-
-      const mailtoLink = `mailto:simiannathan@gmail.com?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(
-        `Prénom : ${prenom}\nNom : ${nom}\nEmail : ${email}\nTéléphone : ${tel}\n\nMessage :\n${message}`
-      )}`;
-
-      window.location.href = mailtoLink;
-
-      setTimeout(() => {
-        this.reset();
-      }, 100);
-    });
-  </script>
 </body>
 </html>
