@@ -19,8 +19,7 @@
     .hero {
       position: relative;
       height: 50vh;
-      width: 100vw;
-      margin: 0;
+      width: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
@@ -28,52 +27,55 @@
 
     .header-container {
       position: absolute;
-      top: 15vh;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      top: 5vh;
+      left: 0;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 10;
     }
 
-    .top-banner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px 40px 20px 80px;
-      border-radius: 10px;
-      z-index: 2;
-      width: 55vw;
-      max-width: 800px;
-      justify-content: flex-start;
+    .logo-container {
+      margin-bottom: 20px;
     }
 
     .logo {
-      position: absolute;
-      left: -75px;
-      top: -50px;
-      height: 150px;
+      height: 200px;
       width: auto;
-      z-index: 3;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 60px;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 4px;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover,
@@ -87,6 +89,7 @@
       overflow: hidden;
       width: 100vw;
       max-width: 100%;
+      margin-top: 280px; /* espace sous logo + menu */
     }
 
     .carousel-container {
@@ -162,15 +165,53 @@
       padding: 20px;
       background-color: #000;
     }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .carousel {
+        margin-top: 240px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      .slide-title {
+        font-size: 1.3em;
+      }
+
+      .carousel {
+        margin-top: 200px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div class="hero"></div>
 
   <div class="header-container">
-    <div class="top-banner">
+    <div class="logo-container">
       <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
       <nav>
         <ul>
           <li><a href="apdm.html">À propos de moi</a></li>
@@ -270,4 +311,3 @@
   </script>
 </body>
 </html>
-
