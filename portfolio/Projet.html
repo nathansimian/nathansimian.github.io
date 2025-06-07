@@ -41,12 +41,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .logo {
-      height: 120px;
+      height: 200px;
       width: auto;
+      filter: drop-shadow(0 0 10px white);
     }
 
     .top-banner {
@@ -63,7 +64,7 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 60px;
       margin: 0;
       padding: 0;
       justify-content: center;
@@ -73,9 +74,12 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 10px 16px;
-      border-radius: 4px;
-      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover,
@@ -170,13 +174,13 @@
       }
 
       .logo {
-        height: 90px;
+        height: 150px;
       }
     }
 
     @media screen and (max-width: 480px) {
       .logo {
-        height: 70px;
+        height: 120px;
       }
 
       .read-more {
@@ -292,3 +296,4 @@
   </section>
 </body>
 </html>
+
