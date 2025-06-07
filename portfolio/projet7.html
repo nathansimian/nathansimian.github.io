@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet 7</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet 7 - Nom du Projet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto Condensed', sans-serif;
@@ -20,17 +20,6 @@
       position: relative;
       height: 50vh;
       width: 100vw;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
@@ -38,50 +27,41 @@
 
     .header-container {
       position: absolute;
-      top: 15vh;
+      top: 5vh;
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      width: 100%;
       z-index: 10;
     }
 
-    .top-banner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px 40px 20px 80px;
-      border-radius: 10px;
-      width: 55vw;
-      max-width: 800px;
-      justify-content: flex-start;
+    .logo {
+      height: 120px;
+      width: auto;
+      margin-bottom: 10px;
     }
 
-    .logo {
-      position: absolute;
-      left: 430px;
-      top: -50px;
-      height: 150px;
-      width: auto;
-      z-index: 3;
+    .top-banner {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 30px;
+      border-radius: 10px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 60px;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border-radius: 4px;
     }
 
@@ -93,7 +73,7 @@
 
     .project-content {
       max-width: 800px;
-      margin: 100px auto 50px;
+      margin: 120px auto 60px;
       text-align: center;
       padding: 20px;
     }
@@ -118,29 +98,13 @@
     }
 
     @media screen and (max-width: 768px) {
-      .top-banner {
-        flex-direction: column;
-        padding: 20px;
-        width: 90vw;
-      }
-
-      nav ul {
+      .top-banner nav ul {
         flex-direction: column;
         gap: 20px;
       }
 
-      .logo {
-        position: static;
-        margin-bottom: 10px;
-        height: 100px;
-      }
-
-      .project-content h1 {
-        font-size: 2em;
-      }
-
-      .project-content p {
-        font-size: 1em;
+      .project-content {
+        margin-top: 140px;
       }
     }
   </style>
@@ -150,8 +114,8 @@
   <div class="hero"></div>
 
   <div class="header-container">
+    <a href="accueil.html"><img src="logo.png" alt="Logo NS Sports" class="logo"></a>
     <div class="top-banner">
-      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
       <nav>
         <ul>
           <li><a href="apdm.html">À propos de moi</a></li>
@@ -165,9 +129,9 @@
 
   <section class="project-content">
     <h1>Projet 7 : Nom du Projet</h1>
-    <img src="images/projetX.png" alt="Image Projet X">
+    <img src="images/projet7.png" alt="Image Projet 7">
     <p>
-      Ici tu peux écrire la description complète de ton Projet X : son objectif, les outils utilisés, ton rôle, ce que tu as appris, et les résultats obtenus.
+      Ici tu peux écrire la description complète de ton Projet 3 : son objectif, les outils utilisés, ton rôle, ce que tu as appris, et les résultats obtenus.
     </p>
   </section>
 
