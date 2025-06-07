@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projets - Bibou</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Roboto Condensed', sans-serif;
@@ -31,34 +31,32 @@
       left: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
       z-index: 10;
       padding-top: 20px;
     }
 
-    .top-banner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      z-index: 2;
-      width: 90%;
-      max-width: 900px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     .logo-container {
-      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     .logo {
-      height: 100px;
+      height: 120px;
       width: auto;
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
     }
 
     nav ul {
@@ -133,13 +131,11 @@
     .card-content h3 {
       margin: 0 0 10px;
       font-size: 1.2em;
-      color: white;
     }
 
     .card-content p {
       font-size: 0.95em;
       margin: 0 0 20px;
-      color: white;
     }
 
     .read-more {
@@ -161,7 +157,7 @@
       transform: scale(1.1);
     }
 
-    /* Responsive Design */
+    /* Responsive */
     @media screen and (max-width: 768px) {
       .top-banner {
         flex-direction: column;
@@ -174,7 +170,18 @@
       }
 
       .logo {
-        height: 80px;
+        height: 90px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 70px;
+      }
+
+      .read-more {
+        font-size: 0.9em;
+        padding: 4px 8px;
       }
 
       .card-content h3 {
@@ -183,24 +190,6 @@
 
       .card-content p {
         font-size: 0.85em;
-      }
-
-      .read-more {
-        font-size: 0.9em;
-      }
-
-      .projects {
-        padding: 40px 10px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .logo {
-        height: 60px;
-      }
-
-      .read-more {
-        padding: 4px 8px;
       }
     }
   </style>
@@ -227,8 +216,6 @@
 
   <section class="projects">
     <div class="projects-grid">
-
-      <!-- Cartes projets -->
       <a href="projet1.html" class="project-card">
         <img src="projet1.png" alt="Projet 1">
         <div class="card-content">
@@ -237,7 +224,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet2.html" class="project-card">
         <img src="projet2.png" alt="Projet 2">
         <div class="card-content">
@@ -246,7 +232,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet3.html" class="project-card">
         <img src="projet3.png" alt="Projet 3">
         <div class="card-content">
@@ -255,7 +240,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet4.html" class="project-card">
         <img src="projet4.png" alt="Projet 4">
         <div class="card-content">
@@ -264,7 +248,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet5.html" class="project-card">
         <img src="projet5.png" alt="Projet 5">
         <div class="card-content">
@@ -273,7 +256,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet6.html" class="project-card">
         <img src="projet6.png" alt="Projet 6">
         <div class="card-content">
@@ -282,7 +264,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet7.html" class="project-card">
         <img src="projet7.png" alt="Projet 7">
         <div class="card-content">
@@ -291,7 +272,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet8.html" class="project-card">
         <img src="projet8.png" alt="Projet 8">
         <div class="card-content">
@@ -300,7 +280,6 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
       <a href="projet9.html" class="project-card">
         <img src="projet9.png" alt="Projet 9">
         <div class="card-content">
@@ -309,36 +288,7 @@
           <span class="read-more">Lire la suite</span>
         </div>
       </a>
-
     </div>
   </section>
-
-  <script>
-    const flagButton = document.querySelector('.flag-button');
-    const dropdown = document.querySelector('.dropdown-flags');
-    const flagImg = flagButton?.querySelector('img');
-    const flagOptions = document.querySelectorAll('.flag-option img');
-
-    if (flagButton) {
-      flagButton.addEventListener('click', () => {
-        dropdown.classList.toggle('show');
-      });
-
-      flagOptions.forEach(flag => {
-        flag.addEventListener('click', () => {
-          const currentSrc = flagImg.src;
-          flagImg.src = flag.src;
-          flag.src = currentSrc;
-          dropdown.classList.remove('show');
-        });
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
-          dropdown.classList.remove('show');
-        }
-      });
-    }
-  </script>
 </body>
 </html>
