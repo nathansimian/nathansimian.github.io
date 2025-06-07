@@ -6,7 +6,7 @@
   <title>Contact</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
   <style>
-  body {
+    body {
       font-family: 'Roboto Condensed', sans-serif;
       margin: 0;
       padding: 0;
@@ -19,8 +19,7 @@
     .hero {
       position: relative;
       height: 50vh;
-      width: 100vw;
-      margin: 0;
+      width: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
@@ -28,52 +27,56 @@
 
     .header-container {
       position: absolute;
-      top: 15vh;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       z-index: 10;
+      padding-top: 20px;
     }
 
-    .top-banner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px 40px 20px 80px;
-      border-radius: 10px;
-      z-index: 2;
-      width: 55vw;
-      max-width: 800px;
-      justify-content: flex-start;
+    .logo-container {
+      margin-bottom: 20px;
     }
 
     .logo {
-      position: absolute;
-      left: 430px;
-      top: -50px;
-      height: 150px;
+      height: 200px;
       width: auto;
-      z-index: 3;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 60px;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 4px;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover,
@@ -82,21 +85,13 @@
       color: black;
     }
 
-    .content {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 20px;
-      text-align: center;
-    }
-
     .contact-section {
       display: flex;
       justify-content: space-between;
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       flex-wrap: wrap;
-      box-sizing: border-box;
       gap: 40px;
     }
 
@@ -168,40 +163,49 @@
       text-transform: uppercase;
     }
 
+    /* Responsive */
     @media (max-width: 900px) {
       .contact-section {
         flex-direction: column;
-        padding: 30px 20px;
-      }
-
-      .left-contact, .right-contact {
-        padding: 10px 0;
-        max-width: 100%;
-      }
-
-      .top-banner nav {
-        margin-left: 0;
+        padding: 40px 20px;
       }
 
       .top-banner {
         flex-direction: column;
-        align-items: flex-start;
-        width: 90%;
+        padding: 15px;
       }
 
-      .top-banner nav ul {
+      nav ul {
         flex-direction: column;
         gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
       }
     }
   </style>
 </head>
+
 <body>
+  <div class="hero"></div>
+
   <div class="header-container">
     <div class="logo-container">
       <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
     </div>
-    <header class="top-banner">
+    <div class="top-banner">
       <nav>
         <ul>
           <li><a href="apdm.html">À propos de moi</a></li>
@@ -210,10 +214,8 @@
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
   </div>
-
-  <section class="hero"></section>
 
   <section class="contact-section">
     <div class="left-contact">
@@ -248,30 +250,6 @@
   </section>
 
   <script>
-    const flagButton = document.querySelector('.flag-button');
-    const dropdown = document.querySelector('.dropdown-flags');
-    const flagImg = flagButton?.querySelector('img');
-    const flagOptions = document.querySelectorAll('.flag-option img');
-
-    flagButton?.addEventListener('click', () => {
-      dropdown.classList.toggle('show');
-    });
-
-    flagOptions.forEach(flag => {
-      flag.addEventListener('click', () => {
-        const currentSrc = flagImg.src;
-        flagImg.src = flag.src;
-        flag.src = currentSrc;
-        dropdown.classList.remove('show');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!flagButton?.contains(e.target) && !dropdown?.contains(e.target)) {
-        dropdown?.classList.remove('show');
-      }
-    });
-
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
@@ -295,4 +273,3 @@
   </script>
 </body>
 </html>
-
