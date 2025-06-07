@@ -6,7 +6,7 @@
   <title>Projets - Bibou</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <style>
-      body {
+    body {
       font-family: 'Roboto Condensed', sans-serif;
       margin: 0;
       padding: 0;
@@ -19,8 +19,7 @@
     .hero {
       position: relative;
       height: 50vh;
-      width: 100vw;
-      margin: 0;
+      width: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
@@ -28,14 +27,15 @@
 
     .header-container {
       position: absolute;
-      top: 15vh;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      flex-direction: column;
       z-index: 10;
+      padding-top: 20px;
     }
 
     .top-banner {
@@ -43,37 +43,41 @@
       display: flex;
       align-items: center;
       background: rgba(0, 0, 0, 0.9);
-      padding: 20px 40px 20px 80px;
+      padding: 20px;
       border-radius: 10px;
       z-index: 2;
-      width: 55vw;
-      max-width: 800px;
-      justify-content: flex-start;
+      width: 90%;
+      max-width: 900px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
     }
 
     .logo {
-      position: absolute;
-      left: 430px;
-      top: -50px;
-      height: 150px;
+      height: 100px;
       width: auto;
-      z-index: 3;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 60px;
+      flex-wrap: wrap;
+      gap: 30px;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
+      padding: 10px 16px;
       border-radius: 4px;
+      font-size: 1rem;
     }
 
     nav ul li a:hover,
@@ -81,7 +85,7 @@
       background-color: white;
       color: black;
     }
-    /* Section Projets */
+
     .projects {
       padding: 60px 20px;
       text-align: center;
@@ -128,12 +132,12 @@
 
     .card-content h3 {
       margin: 0 0 10px;
-      font-size: 1.4em;
+      font-size: 1.2em;
       color: white;
     }
 
     .card-content p {
-      font-size: 1em;
+      font-size: 0.95em;
       margin: 0 0 20px;
       color: white;
     }
@@ -156,6 +160,49 @@
       color: black;
       transform: scale(1.1);
     }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        height: 80px;
+      }
+
+      .card-content h3 {
+        font-size: 1em;
+      }
+
+      .card-content p {
+        font-size: 0.85em;
+      }
+
+      .read-more {
+        font-size: 0.9em;
+      }
+
+      .projects {
+        padding: 40px 10px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 60px;
+      }
+
+      .read-more {
+        padding: 4px 8px;
+      }
+    }
   </style>
 </head>
 
@@ -168,7 +215,7 @@
       <nav>
         <ul>
           <li><a href="apdm.html">À propos de moi</a></li>
-          <li><a href="Projet.html" class="active">Projets</a></li> <!-- Active ici -->
+          <li><a href="Projet.html" class="active">Projets</a></li>
           <li><a href="bilan.html">Bilan</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -181,11 +228,11 @@
   <section class="projects">
     <div class="projects-grid">
 
-      <!-- Liens vers projets -->
+      <!-- Cartes projets -->
       <a href="projet1.html" class="project-card">
         <img src="projet1.png" alt="Projet 1">
         <div class="card-content">
-          <h3> Reporting à partir de données stockées dans un SGBD relationnel </h3>
+          <h3>Reporting à partir de données stockées dans un SGBD relationnel</h3>
           <p>Description rapide du projet 1.</p>
           <span class="read-more">Lire la suite</span>
         </div>
@@ -203,7 +250,7 @@
       <a href="projet3.html" class="project-card">
         <img src="projet3.png" alt="Projet 3">
         <div class="card-content">
-          <h3>SAÉ - Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple</h3>
+          <h3>SAÉ - Préparation et synthèse d'un tableau de données</h3>
           <p>Description rapide du projet 3.</p>
           <span class="read-more">Lire la suite</span>
         </div>
@@ -212,7 +259,7 @@
       <a href="projet4.html" class="project-card">
         <img src="projet4.png" alt="Projet 4">
         <div class="card-content">
-          <h3>SAÉ - Apprendre en situation la production de données en entreprise</h3>
+          <h3>SAÉ - Production de données en entreprise</h3>
           <p>Description rapide du projet 4.</p>
           <span class="read-more">Lire la suite</span>
         </div>
@@ -269,30 +316,29 @@
   <script>
     const flagButton = document.querySelector('.flag-button');
     const dropdown = document.querySelector('.dropdown-flags');
-    const flagImg = flagButton.querySelector('img');
+    const flagImg = flagButton?.querySelector('img');
     const flagOptions = document.querySelectorAll('.flag-option img');
 
-    flagButton.addEventListener('click', () => {
-      dropdown.classList.toggle('show');
-    });
-
-    flagOptions.forEach(flag => {
-      flag.addEventListener('click', () => {
-        const currentSrc = flagImg.src;
-        flagImg.src = flag.src;
-        flag.src = currentSrc;
-        dropdown.classList.remove('show');
+    if (flagButton) {
+      flagButton.addEventListener('click', () => {
+        dropdown.classList.toggle('show');
       });
-    });
 
-    document.addEventListener('click', (e) => {
-      if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-      }
-    });
+      flagOptions.forEach(flag => {
+        flag.addEventListener('click', () => {
+          const currentSrc = flagImg.src;
+          flagImg.src = flag.src;
+          flag.src = currentSrc;
+          dropdown.classList.remove('show');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.remove('show');
+        }
+      });
+    }
   </script>
 </body>
 </html>
-
-
-
