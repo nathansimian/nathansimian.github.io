@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projet X</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet3 </title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -19,60 +19,62 @@
     .hero {
       position: relative;
       height: 50vh;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
       background: url('background.png') center/cover no-repeat;
       filter: blur(5px);
       z-index: -1;
     }
 
     .header-container {
-      text-align: center;
-      padding-top: 30px;
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
     }
 
     .logo {
-      height: 150px;
+      height: 200px;
       width: auto;
-      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px white);
     }
 
     .top-banner {
       display: flex;
       justify-content: center;
-      gap: 60px;
       background: rgba(0, 0, 0, 0.9);
-      padding: 15px 30px;
+      padding: 20px 40px;
       border-radius: 10px;
+      width: 90%;
       max-width: 900px;
-      margin: 0 auto;
     }
 
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 60px;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 4px;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover,
@@ -83,7 +85,7 @@
 
     .project-content {
       max-width: 800px;
-      margin: 100px auto 50px;
+      margin: 60px auto 40px;
       text-align: center;
       padding: 20px;
     }
@@ -110,7 +112,7 @@
     @media screen and (max-width: 768px) {
       .top-banner {
         flex-direction: column;
-        gap: 20px;
+        padding: 15px;
       }
 
       nav ul {
@@ -119,16 +121,35 @@
       }
 
       .logo {
-        height: 100px;
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
       }
     }
   </style>
 </head>
+
 <body>
-  <section class="hero"></section>
+
+  <div class="hero"></div>
 
   <div class="header-container">
-    <a href="accueil.html"><img src="logo.png" alt="Logo NS Sports" class="logo"></a>
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
     <div class="top-banner">
       <nav>
         <ul>
@@ -142,11 +163,13 @@
   </div>
 
   <section class="project-content">
-    <h1>Projet X : Nom du Projet</h1>
-    <img src="images/projetX.png" alt="Image Projet X">
+    <h1>Projet 3 : Nom du Projet</h1>
+    <img src="images/projet3.png" alt="Image Projet 3">
     <p>
-      Ici tu peux écrire la description complète de ton Projet X : son objectif, les outils utilisés, ton rôle, ce que tu as appris, et les résultats obtenus.
+      Ici tu peux écrire la description complète de ton Projet 1 : son objectif, les outils utilisés, ton rôle, ce que tu as appris, et les résultats obtenus.
     </p>
   </section>
+
 </body>
 </html>
+
