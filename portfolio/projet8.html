@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet8 </title>
+  <title>Projet 8 : Concours Dataviz</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -84,29 +84,49 @@
     }
 
     .project-content {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 60px auto 40px;
-      text-align: center;
       padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .project-content h1 {
       font-size: 2.5em;
       margin-bottom: 30px;
+      width: 100%;
+      text-align: center;
     }
 
-    .project-content img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 30px;
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+      margin-bottom: 15px;
     }
 
     .project-content p {
       font-size: 1.2em;
       line-height: 1.6em;
       text-transform: none;
+      text-align: justify;
+    }
+
+    .text-block {
+      flex: 1 1 400px;
+    }
+
+    .image-block {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 15px;
     }
 
     @media screen and (max-width: 768px) {
@@ -125,7 +145,12 @@
       }
 
       .project-content {
+        flex-direction: column;
         padding: 15px;
+      }
+
+      .project-content h1 {
+        font-size: 2em;
       }
     }
 
@@ -163,13 +188,39 @@
   </div>
 
   <section class="project-content">
-    <h1>Projet 8 : Nom du Projet</h1>
-    <img src="images/projet8.png" alt="Image Projet 8">
-    <p>
-      Ici tu peux écrire la description complète de ton Projet 1 : son objectif, les outils utilisés, ton rôle, ce que tu as appris, et les résultats obtenus.
-    </p>
+    <div class="text-block">
+      <h1> CONCOURS DATAVIZ </h1>
+
+      <h2>CONTEXTE DU PROJET</h2>
+      <p>
+        Dans le cadre d’un concours de datavisualisation, j’ai participé à la réalisation d’une infographie sur la thématique de la scolarisation des jeunes âgés de 15 à 29 ans. Ce projet s’appuyait sur un jeu de données fourni au format Excel, contenant des informations statistiques sur les parcours scolaires de cette tranche d’âge. Il s’agissait d’un exercice synthétique mêlant rigueur analytique, choix visuels et réflexion critique sur les dynamiques éducatives en France.
+      </p>
+
+      <h2>PROBLÉMATIQUE CHOISIE</h2>
+      <p>
+        Afin de donner une direction claire à notre travail, nous avons formulé une problématique précise : “Étudiants des villes vs étudiants des champs : pourquoi ne suivent-ils pas les mêmes trajectoires scolaires ?”. Cette question nous a permis de croiser les données de scolarisation avec des indicateurs territoriaux, dans le but de mettre en évidence les écarts d’accès à l’éducation selon le lieu de résidence.
+      </p>
+
+      <h2>OBJECTIF DE L’INFOGRAPHIE</h2>
+      <p>
+        L’infographie visait à informer un large public (étudiants, décideurs, enseignants, citoyens curieux) sur les disparités territoriales de scolarisation. Elle devait être à la fois visuellement attractive, facile à lire et rigoureuse dans l’analyse.
+      </p>
+
+      <h2>OUTILS UTILISÉS</h2>
+      <p>
+        Les graphiques ont été réalisés avec R (ggplot2) et les données ont été enrichies à l’aide d’Opendata INSEE. L’infographie finale a été conçue avec Canva, combinant visuels, texte et hiérarchisation claire de l’information.
+      </p>
+
+      <h2>BILAN PERSONNEL</h2>
+      <p>
+        Ce projet m’a permis d’approfondir mes compétences en datavisualisation, en analyse territoriale et en communication visuelle. Il m’a appris à faire passer un message clair en une seule page, à travers des données complexes, avec rigueur et créativité.
+      </p>
+    </div>
+
+    <div class="image-block">
+      <img src="dataviz.png" alt="Infographie Projet 8">
+    </div>
   </section>
 
 </body>
 </html>
-
